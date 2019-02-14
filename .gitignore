@@ -108,3 +108,4 @@ venv.bak/
 node_modules/
 
 flaskApp/static/package-lock.json
+flaskApp/static/backend_examples.html

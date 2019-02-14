@@ -8,8 +8,6 @@ def gen_qr_code( string_for_qr):
 	return None
 
 
-
-
 w, h = 600, 800
 sq = 15
 
@@ -32,7 +30,7 @@ def use_fromfunction( color1, color2 ):
 def make_checkerboard(color1, color2):
 	### CREATE ALIASES FOR ALL THE COLORS AND CONVERT THEM TO HEX
 	colorMap = { "red": (0xFF, 0x00, 0x00), "green": (0x00,0xFF,0x00),
-				 "blue": (0x00,0x00,0xFF)}
+				 "blue": (0x00,0x00,0xFF), "yellow": (0xFF,0xFF,0x00)}
 	print ("Received",color1,color2)
 
 	color1 = colorMap[color1]

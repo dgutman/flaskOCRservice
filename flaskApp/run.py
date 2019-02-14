@@ -31,7 +31,7 @@ def process_snapshot():
 
 @app.route('/_add_numbers')
 def add_numbers():
-    a = request.args.get('a', 0, type=int)
+    a = request.args.get('a', 0, type=int) ## There is clearly a more modern way to do this
     b = request.args.get('b', 0, type=int)
     return jsonify(result=a + b*b)
 
@@ -45,14 +45,17 @@ def serve_pil_image(pil_img):
 
 @app.route('/api/image_utils/checkerboard')
 def serve_img():
-    img = qrg.make_checkerboard()
+    img = qrg.make_checkerboard('blue','green')
     return serve_pil_image(img)
 
 @app.route('/api/image_utils/_get_checkers', methods=['POST','GET'])
 def serve_checkerboard_img():
-    img = qrg.make_checkerboard('red','green')
-    return serve_pil_image(img)
+    color1 = request.args.get('color1', 0, type=str) ## There is clearly a more modern way to do this
+    color2 = request.args.get('color2', 0, type=str)
 
+    print(color1,color2)    
+    img = qrg.make_checkerboard(color1,color2)
+    return serve_pil_image(img)
 
 
 if __name__ == '__main__':
